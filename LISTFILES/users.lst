@@ -1,0 +1,5 @@
+#user,id,primary_grp,secondary_grp,homedir,name
+rajesh4,7735,,,,Rajesh Mandalapu
+bobzhang,58099,,,,Bob Zhang
+oracle,323822,dba,oinstall,/u01/app/oracle,oracle
+

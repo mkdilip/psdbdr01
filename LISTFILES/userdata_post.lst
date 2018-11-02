@@ -1,0 +1,1 @@
+sudo -u oracle ${rundir}/app/bin/post_oracle.sh  | tee /tmp/post_app_userdata.log

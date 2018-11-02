@@ -1,0 +1,10 @@
+# User alias specification
+User_Alias      APPTEAM = jenhong, toaivo, hkong, sverupan, rajesh4, vmudraga, prabhatk, bvarun, banu, safi1981, bobzhang
+Cmnd_Alias	SUDOAPPCMD = /bin/su - oracle, /bin/su - psoft, /bin/su - apex, /bin/su - liferay, /bin/su - kaba
+
+APPTEAM		ALL = NOPASSWD: SUDOAPPCMD
+
+User_Alias	APPUSER = oracle 
+Cmnd_Alias	APPCMD = /usr/sbin/dmidecode,/apex/test.sh
+
+APPUSER		ALL = NOPASSWD: APPCMD

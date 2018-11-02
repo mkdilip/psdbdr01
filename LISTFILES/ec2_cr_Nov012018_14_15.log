@@ -1,0 +1,169 @@
+
+Checking if the required files are present
+
+file ec2_details.lst exists
+
+ psdbdr01 does not exists. Good to proceed
+
+ AMI_ID ami-0323e6a4b5d273f7d .. exists
+
+ KEYPAIR ec2keypair .. exists
+
+ ASG_MIN value 1 is a integer
+
+ ASG_MAX value 1 is a integer
+
+ ASG_DESIRED value 1 is a integer
+
+ SWAP_SIZE value 10 is a integer
+
+S3 bucket userdata-ps.stanford.edu exists
+
+ s3://userdata-ps.stanford.edu/aws_ec2_create/psdbdr01/app/data/users.lst exists. Making a local copy
+
+ Not asiaaws.stanford.edu domain
+
+ Not erpdev.stanford.edu domain
+
+ Not erp.stanford.edu domain
+
+ Domain Name is erpdr.stanford.edu
+
+Route53 zone id for erpdr.stanford.edu is Z3LNW16S2I1HHW
+
+ Fetching the availability zone for PS 
+
+
+EBS file ebs_details.lst exists
+
+EFS file efs_details.lst exists
+String length for $i is oracle
+String length for $i is dba
+String length for $i is app
+String length for $i is new
+String length for $i is /app
+
+ EFS app Not present. Good to create
+String length for $i is oracle
+String length for $i is dba
+String length for $i is u01
+String length for $i is new
+String length for $i is /u01
+
+ EFS u01 Not present. Good to create
+
+/app not in ebs_details.lst file. Good to attach
+
+/u01 not in ebs_details.lst file. Good to attach
+
+Existing EBS file ebs_exist_details.lst exists
+String length for $i is /u02
+String length for $i is oracle
+String length for $i is dba
+String length for $i is vol-0142e3569c2c18f46
+Volume vol-0142e3569c2c18f46 is available. Good to attach
+Volume vol-0142e3569c2c18f46 and ec2 instance are in us-west-2a. Good to attach
+
+/u02 not in ebs_details.lst file. Good to attach
+
+/u02 not in efs_details.lst file. Good to attach
+
+ No new security groups to be created
+
+ Existing security groups will be attached using sg_details.lst
+
+Security group ssh_http_sg present. Good to Attach
+
+Security group csweb_dr_sg present. Good to Attach
+Practise Area     :  PS
+Application       :  Apex
+Environment Name  :  APEXDEV3
+Tier Type         :  DB
+Hostname          :  psdbdr01
+Domain Name       :  erpdr.stanford.edu
+Ticket            :  CLOUD-65
+Created By        :  dilipk
+Risk Type         :  LOW
+Existing EBS volume:  Yes
+Root Customization:  Yes
+Swap Space size   :  10
+Availability Zone :  us-west-2a
+Subnet            :  subnet-0267c8fd1c45b2204
+EC2 server Type   :  t2.large
+AMI ID            :  ami-0323e6a4b5d273f7d
+ElasticIP required:  Yes
+Autoscale Min     :  1
+Autoscale Max     :  1
+Autoscale Desired :  1
+Health Check Type :  EC2
+Server Keypair    :  ec2keypair
+Root Customization:  Yes
+Attach Existing SG:  YES
+Existing Sec Grps :  ,ssh_http_sg,csweb_dr_sg
+S3 Sysadmin Bucket:  userdata-sysadmin.stanford.edu
+S3 App Location   :  s3://userdata-ps.stanford.edu/aws_ec2_create/psdbdr01
+
+ GENERATING vars.tf file
+
+ Creating terraform files for new EFS volume app
+
+ Executing terraform for app
+
+Validating new EFS volume app
+
+ Creating terraform files for new EFS volume u01
+
+ Executing terraform for u01
+
+Validating new EFS volume u01
+Adding main.tf file entry for existing EFS volume app
+Adding userdata.sh file entry for existing EFS volume app
+
+ EXISTING EFS VOLUME app SETUP .. [DONE]
+Adding main.tf file entry for existing EFS volume u01
+Adding userdata.sh file entry for existing EFS volume u01
+
+ EXISTING EFS VOLUME u01 SETUP .. [DONE]
+
+Generate the EBS tf file for asm1
+Adding main.tf file entry for asm1
+Adding userdata.sh file entry for asm1
+Adding final App userdata execution to userdata.sh
+
+ EBS VOLUME ebs_asm1.tf FILE CREATION .. [DONE]
+
+Generate the EBS tf file for /db/lrprd
+Adding main.tf file entry for /db/lrprd
+Adding userdata.sh file entry for /db/lrprd
+Adding final App userdata execution to userdata.sh
+Entry for user oracle already present
+
+ EBS VOLUME ebs_db_lrprd.tf FILE CREATION .. [DONE]
+
+Generate the EBS tf file for /backup
+Adding main.tf file entry for /backup
+Adding userdata.sh file entry for /backup
+Adding final App userdata execution to userdata.sh
+Entry for user oracle already present
+
+ EBS VOLUME ebs_backup.tf FILE CREATION .. [DONE]
+Adding main.tf file entry for /u02
+Adding userdata.sh file entry for /u02
+Adding final App userdata execution to userdata.sh
+Entry for user oracle already present
+
+ EBS EXISTING VOLUME setup .. [DONE]
+
+ Generating ElasticIP tf file
+
+ EIP DNS eipdns.tf FILE CREATION .. [DONE]
+
+ Preparing the pam_duo.conf
+
+ Copying pam_duo.conf to s3
+Completed 123 Bytes/123 Bytes (1.4 KiB/s) with 1 file(s) remainingupload: ./pam_duo.conf to s3://userdata-sysadmin.stanford.edu/ec2_sys_userdata/psdbdr01/sys/bin/pam_duo.conf
+
+ Copying post_sys.sh to s3://userdata-sysadmin.stanford.edu/ec2_sys_userdata/psdbdr01/sys/bin/
+Completed 89 Bytes/89 Bytes (1.3 KiB/s) with 1 file(s) remainingupload: ./post_sys.sh to s3://userdata-sysadmin.stanford.edu/ec2_sys_userdata/psdbdr01/sys/bin/post_sys.sh
+Copying users.lst,groups.lst,sudo.lst to Application S3 Bucket
+Syncing the application userdata files

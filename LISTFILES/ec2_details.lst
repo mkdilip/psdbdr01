@@ -1,0 +1,12 @@
+APPLICATION=Apex
+ENV_NAME=APEXDEV3
+EC2_TYPE=t2.large
+HOST_NAME=psdbdr01
+AMI_ID=ami-0323e6a4b5d273f7d
+ASG_MIN=1
+ASG_MAX=1
+ASG_DESIRED=1
+SWAP_SIZE=10
+TICKET=CLOUD-65
+S3_APP_LOCATION=s3://userdata-ps.stanford.edu/aws_ec2_create/psdbdr01/
+KEYPAIR=ec2keypair

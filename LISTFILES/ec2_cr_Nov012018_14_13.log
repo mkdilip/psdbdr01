@@ -1,0 +1,68 @@
+
+Checking if the required files are present
+
+file ec2_details.lst exists
+
+ psdbdr01 does not exists. Good to proceed
+
+ AMI_ID ami-0323e6a4b5d273f7d .. exists
+
+ KEYPAIR ec2keypair .. exists
+
+ ASG_MIN value 1 is a integer
+
+ ASG_MAX value 1 is a integer
+
+ ASG_DESIRED value 1 is a integer
+
+ SWAP_SIZE value 10 is a integer
+
+S3 bucket userdata-ps.stanford.edu exists
+
+ s3://userdata-ps.stanford.edu/aws_ec2_create/psdbdr01/app/data/users.lst exists. Making a local copy
+
+ Not asiaaws.stanford.edu domain
+
+ Not erpdev.stanford.edu domain
+
+ Not erp.stanford.edu domain
+
+ Domain Name is erpdr.stanford.edu
+
+Route53 zone id for erpdr.stanford.edu is Z3LNW16S2I1HHW
+
+ Fetching the availability zone for PS 
+
+
+EBS file ebs_details.lst exists
+
+EFS file efs_details.lst exists
+String length for $i is oracle
+String length for $i is dba
+String length for $i is app
+String length for $i is new
+String length for $i is /app
+
+ EFS app Not present. Good to create
+String length for $i is oracle
+String length for $i is dba
+String length for $i is u01
+String length for $i is new
+String length for $i is /u01
+
+ EFS u01 Not present. Good to create
+
+/app not in ebs_details.lst file. Good to attach
+
+/u01 not in ebs_details.lst file. Good to attach
+
+Existing EBS file ebs_exist_details.lst exists
+String length for $i is /u01
+String length for $i is oracle
+String length for $i is dba
+String length for $i is vol-0142e3569c2c18f46
+Volume vol-0142e3569c2c18f46 is available. Good to attach
+Volume vol-0142e3569c2c18f46 and ec2 instance are in us-west-2a. Good to attach
+
+/u01 not in ebs_details.lst file. Good to attach
+/u01 already present in efs_details.lst file. Please check
